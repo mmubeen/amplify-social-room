@@ -2,7 +2,15 @@
 import { util, extensions } from '@aws-appsync/utils'
 export const request = () => ({ });
 
-export const response = (ctx:any) => {
+interface Context {
+    arguments: UserRoom;
+}
+
+interface UserRoom {
+    roomId: string;
+    myUsername: string;
+}
+export const response = (ctx:Context) => {
     const filter = {
          roomId: { eq: ctx.arguments.roomId },
          username: { ne: ctx.arguments.myUsername }
