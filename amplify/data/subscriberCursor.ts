@@ -1,7 +1,8 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { util, extensions } from '@aws-appsync/utils'
 export const request = () => ({ });
 
-export const response = (ctx) => {
+export const response = (ctx:any) => {
     const filter = {
          roomId: { eq: ctx.arguments.roomId },
          username: { ne: ctx.arguments.myUsername }
