@@ -20,7 +20,7 @@ const schema = a.schema({
     .returns(a.ref('Cursor'))
     .authorization(allow => [allow.authenticated()])
     .handler(a.handler.custom({
-      entry: './publishCursor.js',
+      entry: './publishCursor.ts',
     })),
   
   subscribeCursor: a.subscription()
@@ -28,7 +28,7 @@ const schema = a.schema({
     .arguments({ roomId: a.string(), myUsername: a.string() })
     .authorization(allow => [allow.authenticated()])
     .handler(a.handler.custom({
-      entry: './subscribeCursor.js'
+      entry: './subscribeCursor.ts'
     })),
 
 }).authorization((allow) => [allow.authenticated()]);
